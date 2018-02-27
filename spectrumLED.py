@@ -19,7 +19,7 @@ device_info = p.get_device_info_by_index(device_index)
 
 # Frequency processing and grouping into bars
 T = 1. / 48000
-x = sf.rfftfreq(N, T)[-N//2:]
+x = np.fft.rfftfreq(N, T)[-N//2:]
 
 a = np.concatenate([np.linspace(47, 1000, 8), np.linspace(1500, 6000, 13), np.linspace(7000, 12000, 7), np.linspace(13000, 17000, 5)])
 bins = np.column_stack((a[:-1], a[1:]))
