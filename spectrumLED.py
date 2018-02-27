@@ -1,6 +1,6 @@
 import pyaudio as pa
 import numpy as np
-import pyfftw.interfaces.scipy_fftpack as pf
+import scipy.fftpack as sf
 import time
 from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
@@ -19,7 +19,7 @@ device_info = p.get_device_info_by_index(device_index)
 
 # Frequency processing and grouping into bars
 T = 1. / 48000
-x = np.fft.rfftfreq(N, T)[-N//2:]
+x = sf.rfftfreq(N, T)[-N//2:]
 
 a = np.concatenate([np.linspace(47, 1000, 8), np.linspace(1500, 6000, 13), np.linspace(7000, 12000, 7), np.linspace(13000, 17000, 5)])
 bins = np.column_stack((a[:-1], a[1:]))
@@ -53,12 +53,12 @@ while True:
 		s.start_stream()
 		data = np.frombuffer(s.read(N), dtype=np.int16)
 
-		y = pf.rfft(data * win)
+		y = sf.rfft(data * win)
 		y = 2 / win_sum * np.abs(y[:N//2])
 
 		for i, v in freq_ind.items():
 			bins_sum[i] = np.mean(y[v])
-		
+
 		bins_sum = bins_sum * weights
 		maximums[i] = bins_sum.max()
 		bins_sum = ((bins_sum * 7) / maximums.mean()).astype(np.int16)

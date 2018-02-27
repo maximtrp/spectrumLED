@@ -10,7 +10,7 @@
 * Software:
 	* Armbian (latest stable)
 	* Python 3.6 and third-party packages:
-		* NumPy, Luma, PyAudio, pyFFTW (or SciPy/NumPy FFT modules)
+		* NumPy, SciPy, Luma, and PyAudio
 	* ALSA
 
 ## Video
@@ -32,4 +32,4 @@ Change these settings if needed: run `aplay -l` to list all devices and correct 
 
 3. Configure an audio player. If you are using cmus, refer to `cmus.rc` file. I had no sound when `default` was specified in `dsp.alsa.device` option. Though `out` wrapper works fine.
 
-... 
+...
