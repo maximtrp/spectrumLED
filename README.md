@@ -6,12 +6,35 @@
 
 * Hardware:
 	* Orange Pi PC (Raspberry PI will hopefully work too)
-	* PCM5102 DAC (or any soundcard)
+	* PCM5102 DAC (or any other soundcard)
 * Software:
 	* Armbian (latest stable)
 	* Python 3.6 and third-party packages:
 		* NumPy, SciPy, Luma, and PyAudio
 	* ALSA
+
+## Wiring
+
+1. LED matrix:
+
+LED pin | OPi pin (phys) | OPi pin name
+--- | --- | ---
+VCC | pin 4 | +5V
+GND | pin 25 | GND
+DIN | pin 19 | SPI0_MOSI
+CS | pin 24 | SPI0_CS0
+CLK | pin 23 | SPI0_CLK
+
+2. PCM5102 DAC:
+
+DAC pin | OPi pin (phys) | OPi pin name
+--- | --- | ---
+BCK | pin 27 | PCM0_CLK
+DATA | pin 37 | PCM0_DOUT
+LRCK | pin 28 | PCM0_SYNC
+GND | pin 34 | GND
+GND | pin 39 | GND
+VCC | pin 2 | +5V
 
 ## Video
 
