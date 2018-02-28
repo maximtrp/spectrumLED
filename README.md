@@ -1,5 +1,7 @@
 # spectrumLED
 
+![Visualization](spectrumLED.gif)
+
 *spectrumLED* is a simple spectrum analyzer meant to be used with a 32x8 LED matrix (MAX7219). Though it can be easily modified to fit the other sizes and matrices.
 
 ## Build setup
