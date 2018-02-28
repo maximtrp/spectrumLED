@@ -53,6 +53,12 @@ VCC | pin 2 | +5V
 
 Change these settings if needed: run `aplay -l` to list all devices and correct card and device indices in the configuration file.
 
-3. Configure an audio player. If you are using cmus, refer to `cmus.rc` file. I had no sound when `default` was specified in `dsp.alsa.device` option. Though `out` wrapper works fine.
+3. Enable SPI and PCM devices in [FEX](http://linux-sunxi.org/Fex_Guide) (legacy kernel) file or [add certain overlays](https://docs.armbian.com/Hardware_Allwinner_overlays/) (mainline). This is an optional step and depends on your hardware setup. See Armbian site for details.
 
-...
+4. Configure an audio player. If you are using cmus, refer to `cmus.rc` file. I had no sound when `default` was specified in `dsp.alsa.device` option. Though `out` wrapper works fine.
+
+5. Play some music and run the script:
+
+```
+python3 spectrumLED.py
+```
