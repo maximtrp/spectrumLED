@@ -7,7 +7,7 @@
 ## Build setup
 
 * Hardware:
-	* Orange Pi PC (Raspberry PI will hopefully work too)
+	* Orange Pi PC (or Raspberry PI)
 	* PCM5102 DAC (or any other soundcard)
 * Software:
 	* Armbian (latest stable)
@@ -27,7 +27,7 @@ DIN | pin 19 | SPI0_MOSI
 CS | pin 24 | SPI0_CS0
 CLK | pin 23 | SPI0_CLK
 
-2. PCM5102 DAC:
+2. PCM5102 DAC (optional):
 
 DAC pin | OPi pin (phys) | OPi pin name
 --- | --- | ---
@@ -62,5 +62,5 @@ Change these settings if needed: run `aplay -l` to list all devices and correct 
 5. Play some music and run the script:
 
 ```
-python3 spectrumLED.py
+$ python3 spectrumLED.py
 ```
