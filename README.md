@@ -19,6 +19,8 @@
 
 1. LED matrix:
 
+![LED matrix wiring](raspberry-and-led-matrix.png)
+
 LED pin | OPi pin (phys) | OPi pin name
 --- | --- | ---
 VCC | pin 4 | +5V
