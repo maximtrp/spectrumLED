@@ -42,6 +42,8 @@ VCC | pin 2 | +5V
 
 ## Video
 
+[![spectrumLED video](https://img.youtube.com/vi/6AvwO6eH4g8/0.jpg)](https://www.youtube.com/watch?v=6AvwO6eH4g8)
+
 ## Configuration
 
 1. Load a loopback kernel module with:
