@@ -62,7 +62,7 @@ while True:
 		bins_sum[i] = np.mean(y[v])
 
 	bins_sum = bins_sum * weights
-	maximums[z] = np.max(bins_sum)
+	maximums[z] = max(max(bins_sum), 3000)
 	bins_sum = ((bins_sum * 7) / np.mean(maximums)).astype(np.int16)
 
 	with canvas(device) as draw:
