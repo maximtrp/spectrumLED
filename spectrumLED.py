@@ -14,7 +14,7 @@ device.contrast(1)
 # Init PyAudio
 p = pa.PyAudio()
 N = 1024
-device_index = 4
+device_index = 4 
 device_info = p.get_device_info_by_index(device_index)
 
 # Frequency processing and grouping into bars
@@ -44,30 +44,30 @@ weights = np.linspace(3, 17, 32) ** 2
 s = p.open(format=pa.paInt16, channels=2, rate=int(device_info['defaultSampleRate']), input=True, frames_per_buffer=N, input_device_index=device_index)
 
 bins_sum = np.zeros(32, dtype=np.int16)
-maximums = np.zeros(64, dtype=np.int16)
+maximums = np.zeros(64)
 maximums[:] = 15000
 
-i = 0
+z = 0
 while True:
 	try:
 		s.start_stream()
 		data = np.frombuffer(s.read(N), dtype=np.int16)
-
-		y = sf.rfft(data * win)
-		y = 2 / win_sum * np.abs(y[:N//2])
-
-		for i, v in freq_ind.items():
-			bins_sum[i] = np.mean(y[v])
-
-		bins_sum = bins_sum * weights
-		maximums[i] = bins_sum.max()
-		bins_sum = ((bins_sum * 7) / maximums.mean()).astype(np.int16)
-
-		with canvas(device) as draw:
-			for x, y in enumerate(bins_sum):
-				draw.line([x, 8, x, 8 - y], fill=128)
-
-		s.stop_stream()
-		i = i + 1 if i < 63 else 0
 	except:
 		continue
+
+	y = sf.rfft(data * win)
+	y = 2 / win_sum * np.abs(y[:N//2])
+
+	for i, v in freq_ind.items():
+		bins_sum[i] = np.mean(y[v])
+
+	bins_sum = bins_sum * weights
+	maximums[z] = np.max(bins_sum)
+	bins_sum = ((bins_sum * 7) / np.mean(maximums)).astype(np.int16)
+
+	with canvas(device) as draw:
+		for x, y in enumerate(bins_sum):
+			draw.line([x, 8, x, 8 - y], fill=128)
+
+	s.stop_stream()
+	z = z + 1 if z < 63 else 0
