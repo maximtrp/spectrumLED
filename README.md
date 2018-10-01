@@ -11,7 +11,7 @@
 	* PCM5102 DAC (or any other soundcard)
 * Software:
 	* Armbian (latest stable)
-	* Python 3.6 and third-party packages:
+	* Python 3 and third-party packages:
 		* NumPy, SciPy, Luma, and PyAudio
 	* ALSA
 
@@ -39,10 +39,6 @@ LRCK | pin 28 | PCM0_SYNC
 GND | pin 34 | GND
 GND | pin 39 | GND
 VCC | pin 2 | +5V
-
-## Video
-
-[![spectrumLED video](https://img.youtube.com/vi/6AvwO6eH4g8/0.jpg)](https://www.youtube.com/watch?v=6AvwO6eH4g8)
 
 ## Configuration
 
