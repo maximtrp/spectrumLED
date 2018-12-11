@@ -10,7 +10,7 @@
 	* Orange Pi PC (or Raspberry PI)
 	* PCM5102 DAC (or any other soundcard)
 * Software:
-	* Armbian (latest stable)
+	* Armbian (or Raspbian)
 	* Python 3 and third-party packages:
 		* [numpy](http://www.numpy.org)
 		* [scipy](https://www.scipy.org)
