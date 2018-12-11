@@ -12,7 +12,11 @@
 * Software:
 	* Armbian (latest stable)
 	* Python 3 and third-party packages:
-		* NumPy, SciPy, Luma, and PyAudio
+		* [numpy](http://www.numpy.org)
+		* [scipy](https://www.scipy.org)
+		* [luma.core](https://github.com/rm-hull/luma.core)
+		* [luma.led_matrix](https://github.com/rm-hull/luma.led_matrix)
+		* [pyaudio](https://people.csail.mit.edu/hubert/pyaudio/)
 	* ALSA
 
 ## Wiring
@@ -64,3 +68,7 @@ Change these settings if needed: run `aplay -l` to list all devices and correct 
 ```
 $ python3 spectrumLED.py
 ```
+
+## Real-world examples
+
+Beto Sanchez: [1](https://twitter.com/betojsp/status/1072117207092682753) and [2](https://twitter.com/betojsp/status/1069261269474181122)
