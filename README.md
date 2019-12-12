@@ -6,19 +6,19 @@
 
 ## Build setup
 
-* Hardware:
-	* Orange Pi PC (or Raspberry PI)
-	* PCM5102 DAC (or any other soundcard)
+- Hardware:
+	- Orange Pi PC (or Raspberry PI)
+	- PCM5102 DAC (or any other soundcard)
 
-* Software:
-	* Armbian (or Raspbian)
-	* Python 3 and third-party packages:
-		* [numpy](http://www.numpy.org)
-		* [scipy](https://www.scipy.org)
-		* [luma.core](https://github.com/rm-hull/luma.core)
-		* [luma.led_matrix](https://github.com/rm-hull/luma.led_matrix)
-		* [pyaudio](https://people.csail.mit.edu/hubert/pyaudio/)
-	* ALSA
+- Software:
+	- Armbian (or Raspbian)
+	- Python 3 and third-party packages:
+		- [numpy](http://www.numpy.org)
+		- [scipy](https://www.scipy.org)
+		- [luma.core](https://github.com/rm-hull/luma.core)
+		- [luma.led_matrix](https://github.com/rm-hull/luma.led_matrix)
+		- [pyaudio](https://people.csail.mit.edu/hubert/pyaudio/)
+	- ALSA
 
 ## Wiring
 
@@ -27,12 +27,12 @@
 ![LED matrix wiring](raspberry-and-led-matrix.png)
 
 |LED pin|OPi pin (phys)|OPi pin name|
-|---|---|---|
-|VCC|pin 4|+5V|
-|GND|pin 25|GND|
-|DIN|pin 19|SPI0_MOSI|
-|CS|pin 24|SPI0_CS0|
-|CLK|pin 23|SPI0_CLK|
+|---    |---           |---         |
+|VCC    |pin 4         |+5V         |
+|GND    |pin 25        |GND         |
+|DIN    |pin 19        |SPI0_MOSI   |
+|CS     |pin 24        |SPI0_CS0    |
+|CLK    |pin 23        |SPI0_CLK    |
 
 2. PCM5102 DAC (optional):
 
